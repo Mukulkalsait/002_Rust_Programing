@@ -351,6 +351,7 @@ fn takes_and_gives_ownersip(taken: String) -> String {
     given
 }
 
+/* FUN:   */
 fn reference_and_uses() {
     println!("==============");
 }
