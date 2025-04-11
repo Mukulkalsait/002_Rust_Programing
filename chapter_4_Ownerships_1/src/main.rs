@@ -9,7 +9,8 @@ fn main() {
     example_one(); //                INFO: Real EXample 1:
     golden_rules(); //                IMP: VERY IMP INFO ON HEAP AND STACK
     ownership_working_methods(); //   IMP: This contain some examples to show owherships.
-    reference_and_uses(); //          IMP: Thsi is how we use References.
+    reference_and_uses(); //          IMP: This is how we use References.
+    reference_and_uses(); //          IMP:
 }
 
 /* FUN: Memoryo Management in Java/C/C++/Rust
@@ -293,7 +294,7 @@ fn golden_rules() {
      * */
 }
 
-/* FUN:  Ownership transfer even with ARGUMENTS in Function. */
+/* FUN: Ownership transfer even with ARGUMENTS in Function. */
 fn ownership_working_methods() {
     /* FUN_2: Copy Trait. */
     fn copy_from_stack(abcd: u32) {
@@ -351,12 +352,25 @@ fn ownership_working_methods() {
     println!("{}", tripple_return_string_2);
 }
 
-/* FUN:   */
+/* FUN: Reference with "&" and  */
 fn reference_and_uses() {
     /* FUN_2:  lets carete a FUNCTION that calcualtes the LENGHT of string */
     fn calculate_string_lenght1(s: String) -> (String, usize) {
         let length = s.len();
         (s, length)
     }
-    reference_string_1 = String::from("Yes i am the reference string !");
+    let reference_string_1 = String::from("Yes i am the reference string !");
+    let (new_s, length) = calculate_string_lenght1(reference_string_1);
+    println!("{new_s} and {length}");
+
+    /* Y: in above example the "REFERENCE_STRING_1" => DIED;
+     * hence we use different approch this time
+     * FUN_2: lets create */
+    fn calculate_string_lenght_2(s: &String) -> (usize) {
+        let len = s.len();
+        len
+    }
+    let reference_string_2 = String::from("Yes i am the reference string !");
+    let length_of_the_reference_string_2 = calculate_string_lenght_2(&reference_string_2);
+    println!("{}", length_of_the_reference_string_2);
 }
