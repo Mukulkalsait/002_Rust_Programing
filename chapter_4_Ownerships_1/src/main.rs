@@ -295,6 +295,29 @@ fn golden_rules() {
 
 /* FUN:  Ownership transfer even with ARGUMENTS in Function. */
 fn ownership_working_methods() {
+    /* FUN_2: Copy Trait. */
+    fn copy_from_stack(abcd: u32) {
+        println!("{}", abcd);
+        // println!("just changed the repo name.");
+    }
+
+    /* FUN_2: Ownership Transfer. */
+    fn ownership_transfer_into_attribute(abcd: String) {
+        println!("{}", abcd);
+    }
+
+    /* FUN_2: Returning a heap value will kill the returning variable. */
+    fn gives_ownership() -> String {
+        let returning_value = String::from("Hey i am geting Return... 옜");
+        returning_value
+    }
+
+    /* FUN_2: Takes Ownership in Atribute and return Ownership in Return Value.*/
+    fn takes_and_gives_ownersip(taken: String) -> String {
+        let given = taken;
+        given
+    }
+
     /* Y:
      *   => uncomment the code to understand
      *   how variables stored inside HEAP is
@@ -328,30 +351,12 @@ fn ownership_working_methods() {
     println!("{}", tripple_return_string_2);
 }
 
-/* FUN_2: Copy Trait. */
-fn copy_from_stack(abcd: u32) {
-    println!("{}", abcd);
-    // println!("just changed the repo name.");
-}
-
-/* FUN_2: Ownership Transfer. */
-fn ownership_transfer_into_attribute(abcd: String) {
-    println!("{}", abcd);
-}
-
-/* FUN_2: Returning a heap value will kill the returning variable. */
-fn gives_ownership() -> String {
-    let returning_value = String::from("Hey i am geting Return... 옜");
-    returning_value
-}
-
-/* FUN_2: Takes Ownership in Atribute and return Ownership in Return Value.*/
-fn takes_and_gives_ownersip(taken: String) -> String {
-    let given = taken;
-    given
-}
-
 /* FUN:   */
 fn reference_and_uses() {
-    println!("==============");
+    /* FUN_2:  lets carete a FUNCTION that calcualtes the LENGHT of string */
+    fn calculate_string_lenght1(s: String) -> (String, usize) {
+        let length = s.len();
+        (s, length)
+    }
+    reference_string_1 = String::from("Yes i am the reference string !");
 }
