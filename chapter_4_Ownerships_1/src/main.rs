@@ -370,7 +370,49 @@ fn reference_and_uses() {
         let len = s.len();
         len
     }
+
     let reference_string_2 = String::from("Yes i am the reference string !");
     let length_of_the_reference_string_2 = calculate_string_lenght_2(&reference_string_2);
     println!("{}", length_of_the_reference_string_2);
+
+    /* Y:
+     *  In reference fn calculate_string_lenght_2(reference)
+     *  we are boworing the value so we
+     *       1.cannot change it.
+     *       2.cannot pass it to other function.
+     *       3.cannot give it to other owner.
+     */
+
+    fn calculate_string_lenght_3(s: &Stinrg) -> (usize) {
+        //s.push_str('extra value'); DX? this line it the passing try which gives error
+        /* ZSH:
+         * let len = s.len();
+         * len*/
+    }
+
+    //DX:   1----STEP AHEADE.
+    // Y:   MUTABLE REFERENCE
+    //
+
+    /* Y:
+     *   1.the mutable_recreance_taker_() will take mutable value
+     *   and add the line "added line extra."
+     */
+    fn mutable_recreance_taker_(string: &mut String) {
+        // make  MUTABVLE var.
+        string.push_str("added line extra."); //  with this we add the exciting files.
+        println!("{}", string);
+    }
+
+    let mut mutable_reference_string1 = String::from("Yes I am an mutable refernce.");
+    mutable_recreance_taker_(&mut mutable_reference_string1);
+
+    /*
+     * IMP:  RESTECTIONS :::::
+     *
+     *       1. only  one mutable reference for a piece
+     *       2. :wof data/ varibble in one scoope
+     *
+     *
+     * */
 }
