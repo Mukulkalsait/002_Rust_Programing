@@ -10,7 +10,7 @@ fn main() {
     golden_rules(); //                     IMP: VERY IMP INFO ON HEAP AND STACK
     ownership_working_methods(); //        IMP: This contain some examples to show owherships.
     reference_and_uses(); //               IMP: This is how we use References.
-    reference_and_uses(); //               IMP:
+                          // reference_and_uses(); //               IMP:
 }
 
 /* FUN: Memoryo Management in Java/C/C++/Rust
@@ -299,7 +299,7 @@ fn ownership_working_methods() {
     /* FUN_2: Copy Trait. */
     fn copy_from_stack(abcd: u32) {
         println!("{}", abcd);
-        // println!("just changed the repo name.");
+        println!("just changed the repo name.");
     }
 
     /* FUN_2: Ownership Transfer. */
