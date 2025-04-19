@@ -391,12 +391,12 @@ fn reference_and_uses() {
      *       3.cannot give it to other owner.
      */
 
-    fn calculate_string_lenght_3(s: &Stinrg) -> (usize) {
-        //s.push_str('extra value'); DX? this line it the passing try which gives error
-        /* ZSH:
-         * let len = s.len();
-         * len*/
-    }
+    // fn calculate_string_lenght_3(s: &Stinrg) -> (usize) {
+    //     //s.push_str('extra value'); DX? this line it the passing try which gives error
+    //     /* ZSH:
+    //      * let len = s.len();
+    //      * len*/
+    // }
 
     //DX:   1----STEP AHEADE.
     // Y:   MUTABLE REFERENCE
