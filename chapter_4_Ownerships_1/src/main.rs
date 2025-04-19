@@ -304,7 +304,7 @@ fn ownership_working_methods() {
 
     /* FUN_2: Ownership Transfer. */
     fn ownership_transfer_into_attribute(abcd: String) {
-        println!("{}", abcd);
+        println!("This is the OP of ownership_transfer_into_attribute():{}. And it takes ownership of s so s is died.", abcd);
     }
 
     /* FUN_2: Returning a heap value will kill the returning variable. */
@@ -343,7 +343,8 @@ fn ownership_working_methods() {
 
     // P1a:   C
     let ownership_taken = gives_ownership();
-    println!("{ownership_taken}");
+    println!("Now this is just a String::From created in function gives_ownership which return this value:{ownership_taken}.
+    we didnt gave any parameters in this function at all. but the ownership of the stinrg inside function must have died.");
 
     /* Y: both the functions A and B  are same,
      *    but just because one variable is stored in heap
