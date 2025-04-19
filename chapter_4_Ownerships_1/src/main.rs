@@ -298,7 +298,7 @@ fn golden_rules() {
 fn ownership_working_methods() {
     /* FUN_2: Copy Trait. */
     fn copy_from_stack(abcd: u32) {
-        println!("{}", abcd);
+        println!("this is op of function copy_from_stack:{}", abcd);
         println!("just changed the repo name.");
     }
 
@@ -331,7 +331,10 @@ fn ownership_working_methods() {
     // P1a:   A
     let a: u32 = 23;
     copy_from_stack(a);
-    println!("{}", a);
+    println!(
+        "this is op of the orignal a: which is  passed to function copy_from_stack{}",
+        a
+    );
 
     // P1a:   B
     let s = String::from("mukul");
