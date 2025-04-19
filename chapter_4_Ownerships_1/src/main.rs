@@ -4,13 +4,13 @@ fn main() {
 =============================================================================================== "
     );
 
-    memory_management(); //          INFO: Memory Management in different Languages.
-    memory_info(); //                 IMP: VERY IMP MEMORY WORKAEOUND IN PROGRAMS
-    example_one(); //                INFO: Real EXample 1:
-    golden_rules(); //                IMP: VERY IMP INFO ON HEAP AND STACK
-    ownership_working_methods(); //   IMP: This contain some examples to show owherships.
-    reference_and_uses(); //          IMP: This is how we use References.
-    reference_and_uses(); //          IMP:
+    memory_management(); //               INFO: Memory Management in different Languages.
+    memory_info(); //                      IMP: VERY IMP MEMORY WORKAEOUND IN PROGRAMS
+    ownership_transfer_vs_copy_trait(); //   INFO: Real EXample 1:
+    golden_rules(); //                     IMP: VERY IMP INFO ON HEAP AND STACK
+    ownership_working_methods(); //        IMP: This contain some examples to show owherships.
+    reference_and_uses(); //               IMP: This is how we use References.
+    reference_and_uses(); //               IMP:
 }
 
 /* FUN: Memoryo Management in Java/C/C++/Rust
@@ -77,7 +77,7 @@ fn memory_info() {
      *        Length   = Len
      *        Capacity = Cp
      *      inside the 'stack' => this is what help us find the Heap we stored.
-     *   3. if we store a Array in heap it Stored in the order we gave from billow to upwords.
+     *   3. If we store a Array in heap it Stored in the order we gave from billow to upwords.
      *    eg. arr = [a, b, c, d, e]
      *    in heap it wil be
      *  Y:
@@ -188,7 +188,7 @@ Memory types in rust:
 }
 
 /* FUN: copy of stack and ownership of heap. and Ownership. */
-fn example_one() {
+fn ownership_transfer_vs_copy_trait() {
     let x = 5;
     let y = x; // Copy
 
