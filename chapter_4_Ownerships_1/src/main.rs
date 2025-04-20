@@ -376,9 +376,7 @@ fn reference_and_uses() {
      * FUN_2: lets create another function that will only take string as reference and return the size.*/
     fn calculate_string_lenght_2(s: &str) -> usize {
         /* G: Hear instead of String we can use => &String
-         *     but we user &str => which is different and is known as "Slice"
-         *
-         * */
+         *     but we user &str => which is different and is known as "Slice" */
         s.len() // Y:return direct what we want.
     }
 
