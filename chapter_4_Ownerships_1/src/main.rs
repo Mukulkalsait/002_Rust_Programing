@@ -369,7 +369,7 @@ fn reference_and_uses() {
     }
     let reference_string_1 = String::from("Yes i am the reference string !");
     let (new_s, length) = calculate_string_lenght1(reference_string_1);
-    println!("{new_s} and {length}");
+    println!("String:'{new_s}' and its Length:'{length}'");
 
     /* Y: in above example the "REFERENCE_STRING_1" => DIED;
      * hence we use different approch this time
