@@ -418,10 +418,6 @@ fn reference_and_uses() {
      *    if a data is being processed and othe pinter try to change or read data
      *    that will make program go corupted."
      *
-     * Y: |==============================================
-     *    but this can only happen when the  references are MUTABLE, if references
-     *    are "IMMUTABLE" we can use myltyple references without a problem
-     *    because myltyple pointers can read the data without a problem. i guess.
      *
      * */
     let mut no_multy_mutable_reference_eg =
@@ -434,5 +430,30 @@ fn reference_and_uses() {
         "only one can take the &mut => mutable reference ∴ more than one will => ERROR. (hence reference_of_two is commented).
          so the reference_of_one is => {}",
          reference_of_one
-    )
+
+    );
+
+    /*
+     * Y: |==============================================
+     *    but this can only happen when the  references are MUTABLE, if references
+     *    are "IMMUTABLE" we can use myltyple references without a problem
+     *    because myltyple pointers can read the data without a problem. i guess.
+     *    ∴ you can have multyple refeerences.
+     */
+
+    let non_mutable_references_one = String::from("i am a non mutable reference.");
+
+    let reference_of_non_mut_1 = &non_mutable_references_one;
+    let reference_of_non_mut_2 = &non_mutable_references_one;
+    // let reference_of_non_mut_3_which_try_to_be_mut = &mut non_mutable_references_one;
+    // Y: this will give error [IMMUTABLE can not be Mutate.]
+    println!("{reference_of_non_mut_1} {reference_of_non_mut_2}");
+
+    let mut a_mutable_but_used_as_both_mut_and_immutalbe_refernece = String::from("Yes thats me.");
+    let reference_for_the_above_1 = &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+    let reference_for_the_above_2 = &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+    let mut reference_for_the_above_with_mutability_added =
+        &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+
+    println!("{reference_for_the_above_1}, {reference_for_the_above_2}, {reference_for_the_above_with_mutability_added} all three are printing.");
 }
