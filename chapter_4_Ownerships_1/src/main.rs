@@ -10,7 +10,6 @@ fn main() {
     golden_rules(); //                     IMP: VERY IMP INFO ON HEAP AND STACK
     ownership_working_methods(); //        IMP: This contain some examples to show owherships.
     reference_and_uses(); //               IMP: This is how we use References.
-                          // reference_and_uses(); //               IMP:
 }
 
 /* FUN: Memoryo Management in Java/C/C++/Rust
@@ -399,10 +398,13 @@ fn reference_and_uses() {
      *   1.the mutable_recreance_taker_() will take mutable value
      *   and add the line "added line extra."
      */
+    /* FUN_2: Thsi function takes the string as mutable and add extra string in it. and then print.
+     *  AS the string is taken as reference => the scope of the reference is the function ∴ we can
+     *  only print or process valus inisde fun, and cannot return it.*/
     fn mutable_recreance_taker_(string: &mut String) {
-        // make  MUTABVLE var.
         string.push_str("added line extra."); //  with this we add the exciting files.
         println!("the orignal string + added line. = {}", string);
+        println!("AS the string is taken as reference => the scope of the reference is the function ∴ we can only print or process valus inisde fun, and cannot return it !");
     }
 
     let mut mutable_reference_string1 = String::from("Yes I am an mutable refernce.");
@@ -456,4 +458,22 @@ fn reference_and_uses() {
         &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
 
     println!("{reference_for_the_above_1}, {reference_for_the_above_2}, {reference_for_the_above_with_mutability_added} all three are printing.");
+
+    let mut reference_for_the_above_with_mutability_added_2 =
+        &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+    println!("{reference_for_the_above_with_mutability_added_2}: Added it billow the scope ended of the others.");
+
+    // Y: ===============Commented======================================================|
+    /* FUN_2: a function whicn tryes to retnr value of Reference.*/
+    // fn reference_returner_nil_fun() -> &String {
+    //     let s = String::from(" a rererence value.");
+    //     &s
+    //
+    //     /* DX:
+    //      *   ERR 1. Cannot return reference to local var => data own by current fun.
+    //      *   ERR 2. The function return type contain "Borrowed Val" , but the value
+    //      *          isenti borrowed from anythere.
+    //      */
+    // }
+    // Y: ===============Commented======================================================|
 }
