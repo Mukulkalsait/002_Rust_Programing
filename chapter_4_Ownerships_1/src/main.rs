@@ -476,4 +476,18 @@ fn reference_and_uses() {
     //      */
     // }
     // Y: ===============Commented======================================================|
+
+    println!(
+        "
+
+
+
+        RULES of REFERENCES: 
+        ====================================================================| 
+          1. at a given time we can have Either :
+                        a. any number of referneces.
+                    or  b. 1 mut reverence.
+          2. references must be valid. => 
+                mean: The data they poniting should be valid. {{not out of SCOPE.}} "
+    );
 }
