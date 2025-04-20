@@ -310,4 +310,4 @@ fn loops_in_rust() {
         // IMP: here only 1 to 33 numbers will be printed because last is not printed.
         println!("The value is {}", number_x);
     }
-}
+    }
