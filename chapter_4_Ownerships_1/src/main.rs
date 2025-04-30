@@ -9,8 +9,7 @@ fn main() {
     ownership_transfer_vs_copy_trait(); //   INFO: Real EXample 1:
     golden_rules(); //                     IMP: VERY IMP INFO ON HEAP AND STACK
     ownership_working_methods(); //        IMP: This contain some examples to show owherships.
-                                 // reference_and_uses(); //               IMP: This is how we use References.
-                                 // reference_and_uses(); //               IMP:
+    reference_and_uses(); //               IMP: This is how we use References.
 }
 
 /* FUN: Memoryo Management in Java/C/C++/Rust
@@ -369,47 +368,43 @@ fn reference_and_uses() {
     }
     let reference_string_1 = String::from("Yes i am the reference string !");
     let (new_s, length) = calculate_string_lenght1(reference_string_1);
-    println!("{new_s} and {length}");
+    println!("String:'{new_s}' and its Length:'{length}'");
 
     /* Y: in above example the "REFERENCE_STRING_1" => DIED;
      * hence we use different approch this time
-     * FUN_2: lets create */
-    fn calculate_string_lenght_2(s: &String) -> (usize) {
-        let len = s.len();
-        len
+     * FUN_2: lets create another function that will only take string as reference and return the size.*/
+    fn calculate_string_lenght_2(s: &str) -> usize {
+        s.len()
+        /* Y: return direct what we want.
+         *   Hear instead of String we can use => &String
+         *   but we user &str => which is different and is known as "Slice" */
     }
 
-    let reference_string_2 = String::from("Yes i am the reference string !");
+    let reference_string_2 = String::from("Yes i am the 2nd reference string !");
     let length_of_the_reference_string_2 = calculate_string_lenght_2(&reference_string_2);
-    println!("{}", length_of_the_reference_string_2);
+    println!(
+        "orignal String:{}, and its length {}",
+        reference_string_2, length_of_the_reference_string_2
+    );
 
-    /* Y:
-     *  In reference fn calculate_string_lenght_2(reference)
+    /* B: In reference fn calculate_string_lenght_2(reference)
      *  we are boworing the value so we
      *       1.cannot change it.
      *       2.cannot pass it to other function.
      *       3.cannot give it to other owner.
      */
 
-    fn calculate_string_lenght_3(s: &Stinrg) -> (usize) {
-        //s.push_str('extra value'); DX? this line it the passing try which gives error
-        /* ZSH:
-         * let len = s.len();
-         * len*/
-    }
-
-    //DX:   1----STEP AHEADE.
-    // Y:   MUTABLE REFERENCE
-    //
-
-    /* Y:
+    /* Y:  MUTABLE REFERENCE
      *   1.the mutable_recreance_taker_() will take mutable value
      *   and add the line "added line extra."
      */
+    /* FUN_2: Thsi function takes the string as mutable and add extra string in it. and then print.
+     *  AS the string is taken as reference => the scope of the reference is the function ∴ we can
+     *  only print or process valus inisde fun, and cannot return it.*/
     fn mutable_recreance_taker_(string: &mut String) {
-        // make  MUTABVLE var.
         string.push_str("added line extra."); //  with this we add the exciting files.
-        println!("{}", string);
+        println!("the orignal string + added line. = {}", string);
+        println!("AS the string is taken as reference => the scope of the reference is the function ∴ we can only print or process valus inisde fun, and cannot return it !");
     }
 
     let mut mutable_reference_string1 = String::from("Yes I am an mutable refernce.");
@@ -417,10 +412,82 @@ fn reference_and_uses() {
 
     /*
      * IMP:  RESTECTIONS :::::
+     *   |------------------------------------------------
+     *   1. Only  one mutable reference for a piece inside a SCOPE.
      *
-     *       1. only  one mutable reference for a piece
-     *       2. :wof data/ varibble in one scoope
+     * G: " With this rust can prevent "DATA-RACES".
+     *    if one data has many more than one pointers, while running a program
+     *    if a data is being processed and othe pinter try to change or read data
+     *    that will make program go corupted."
      *
      *
      * */
+    let mut no_multy_mutable_reference_eg =
+        String::from("1 val in a scope = one Mut reference ONLY.");
+
+    let reference_of_one = &mut no_multy_mutable_reference_eg;
+    // let reference_of_two = &mut no_multy_mutable_reference_eg;
+
+    println!(
+        "only one can take the &mut => mutable reference ∴ more than one will => ERROR. (hence reference_of_two is commented).
+         so the reference_of_one is => {}",
+         reference_of_one
+
+    );
+
+    /*
+     * Y: |==============================================
+     *    but this can only happen when the  references are MUTABLE, if references
+     *    are "IMMUTABLE" we can use myltyple references without a problem
+     *    because myltyple pointers can read the data without a problem. i guess.
+     *    ∴ you can have multyple refeerences.
+     */
+
+    let non_mutable_references_one = String::from("i am a non mutable reference.");
+
+    let reference_of_non_mut_1 = &non_mutable_references_one;
+    let reference_of_non_mut_2 = &non_mutable_references_one;
+    // let reference_of_non_mut_3_which_try_to_be_mut = &mut non_mutable_references_one;
+    // Y: this will give error [IMMUTABLE can not be Mutate.]
+    println!("{reference_of_non_mut_1} {reference_of_non_mut_2}");
+
+    let mut a_mutable_but_used_as_both_mut_and_immutalbe_refernece = String::from("Yes thats me.");
+    let reference_for_the_above_1 = &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+    let reference_for_the_above_2 = &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+    let mut reference_for_the_above_with_mutability_added =
+        &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+
+    println!("{reference_for_the_above_1}, {reference_for_the_above_2}, {reference_for_the_above_with_mutability_added} all three are printing.");
+
+    let mut reference_for_the_above_with_mutability_added_2 =
+        &a_mutable_but_used_as_both_mut_and_immutalbe_refernece;
+    println!("{reference_for_the_above_with_mutability_added_2}: Added it billow the scope ended of the others.");
+
+    // Y: ===============Commented======================================================|
+    /* FUN_2: a function whicn tryes to retnr value of Reference.*/
+    // fn reference_returner_nil_fun() -> &String {
+    //     let s = String::from(" a rererence value.");
+    //     &s
+    //
+    //     /* DX:
+    //      *   ERR 1. Cannot return reference to local var => data own by current fun.
+    //      *   ERR 2. The function return type contain "Borrowed Val" , but the value
+    //      *          isenti borrowed from anythere.
+    //      */
+    // }
+    // Y: ===============Commented======================================================|
+
+    println!(
+        "
+
+
+
+        RULES of REFERENCES: 
+        ====================================================================| 
+          1. at a given time we can have Either :
+                        a. any number of referneces.
+                    or  b. 1 mut reverence.
+          2. references must be valid. => 
+                mean: The data they poniting should be valid. {{not out of SCOPE.}} "
+    );
 }
