@@ -6,30 +6,30 @@ These methods are used for manipulating and working with `String` types.
 
 <!-- G: Easy to understand.===========================================-->
 
+- `is_empty()` = Checks if the `String` has a length of zero.
+- `len()` = Returns the number of bytes in the `String`.
 - `contains()` = Checks if a `String` contains a given substring.
 - `find()` = Searches for the first occurrence of a substring.
-- `is_empty()` = Checks if the `String` has a length of zero.
+
+- `parse()` = Tries to parse a `String` into a given type.
 <!-- Y:checkers="👆"=============================================-->
 
-- `push_str()` = Appends a string slice to the end of the `String`.
 - `push()` = Adds a single character to the end of a `String`.
+- `push_str()` = Appends a string slice to the end of the `String`.
 - `remove()` = Removes a character at a specific index.
 - `replace()` = Replaces a substring with another substring.
 - `replace_range()` = Replaces a range of characters with a string slice.
-- `trim()` = Removes leading and trailing white space.
 
 - `clear()` = Clears the content of a `String`, making it empty.
-- `split_whitespace()` = Splits a string by whitespace.
+- `format!()` = Creates a formatted string (similar to `sprintf`).
+
+- `trim()` = Removes leading and trailing white space.
 - `split()` = Splits a `String` by a delimiter into an iterator.
+- `split_whitespace()` = Splits a string by whitespace.
 
 - `to_uppercase()` = Converts all characters in the string to uppercase.
 - `to_lowercase()` = Converts all characters in the string to lowercase.
 <!-- Y:processors="👆"============================================= -->
-
-- `parse()` = Tries to parse a `String` into a given type.
-- `len()` = Returns the number of bytes in the `String`.
-- `format!()` = Creates a formatted string (similar to `sprintf`).
-<!-- Y:converters="👆"============================================= -->
 
 ---
 
