@@ -48,17 +48,19 @@ These methods are for manipulating and working with vectors (dynamic arrays).
 
 <!-- Y: PROCESSORS =============================================-->
 
+<!-- B: single elements -->
+
 - `push()` = Adds an element to the end of the `Vec`.
 - `pop()` = Removes the last element of the `Vec`.
-
 - `insert()` = Inserts an element at a specified index.
 - `remove()` = Removes an element at a specified index.
 
-- `clear()` = Clears all elements from the `Vec`.
-- `slice()` = Returns a slice of the `Vec` from a range of indices.
+<!-- B: multy elements -->
 
-- `sort()` = Sorts the elements of the `Vec`.
-- `reverse()` = Reverses the order of elements in the `Vec`.
+- `sort()` = Sorts the elements of the `Vec` re-arrange according to specified. // re-arrange
+- `reverse()` = Reverses the order of elements in the `Vec`. //re-verse
+- `slice()` = Returns a slice of the `Vec` from a range of indices. //cut part
+- `clear()` = Clears all elements from the `Vec`. // empty
 
 <!-- Y: REPETER ============================================-->
 
