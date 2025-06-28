@@ -1,10 +1,12 @@
 # Rust Methods
 
+<!-- R: -->
+
 ## 1. **String Methods**
 
 These methods are used for manipulating and working with `String` types.
 
-<!-- G: Easy to understand.===========================================-->
+<!-- Y: CHECKERS =============================================-->
 
 - `is_empty()` = Checks if the `String` has a length of zero.
 - `len()` = Returns the number of bytes in the `String`.
@@ -12,7 +14,7 @@ These methods are used for manipulating and working with `String` types.
 - `find()` = Searches for the first occurrence of a substring.
 
 - `parse()` = Tries to parse a `String` into a given type.
-<!-- Y:checkers="👆"=============================================-->
+<!-- Y: PROCESSORS =============================================-->
 
 - `push()` = Adds a single character to the end of a `String`.
 - `push_str()` = Appends a string slice to the end of the `String`.
@@ -20,45 +22,51 @@ These methods are used for manipulating and working with `String` types.
 - `replace()` = Replaces a substring with another substring.
 - `replace_range()` = Replaces a range of characters with a string slice.
 
-- `clear()` = Clears the content of a `String`, making it empty.
-- `format!()` = Creates a formatted string (similar to `sprintf`).
-
 - `trim()` = Removes leading and trailing white space.
 - `split()` = Splits a `String` by a delimiter into an iterator.
 - `split_whitespace()` = Splits a string by whitespace.
 
+- `clear()` = Clears the content of a `String`, making it empty.
+- `format!()` = Creates a formatted string (similar to `sprintf`).
+
 - `to_uppercase()` = Converts all characters in the string to uppercase.
 - `to_lowercase()` = Converts all characters in the string to lowercase.
-<!-- Y:processors="👆"============================================= -->
 
----
+<!-- R: -->
 
 ## 2. **Vec (Vector) Methods**
 
 These methods are for manipulating and working with vectors (dynamic arrays).
 
-- `contains()` = Checks if an element exists in the `Vec`.
-- `is_empty()` = Checks if the `Vec` is empty.
+<!-- Y: CHECKERS =============================================-->
 
-- `insert()` = Inserts an element at a specified index.
+- `is_empty()` = Checks if the `Vec` is empty.
+- `len()` = Returns the number of elements in the `Vec`.
+- `contains()` = Checks if an element exists in the `Vec`.
+<!-- find -->
+- `retain()` = Retains elements in the `Vec` that match a condition.
+
+<!-- Y: PROCESSORS =============================================-->
+
 - `push()` = Adds an element to the end of the `Vec`.
 - `pop()` = Removes the last element of the `Vec`.
+
+- `insert()` = Inserts an element at a specified index.
 - `remove()` = Removes an element at a specified index.
+
+- `clear()` = Clears all elements from the `Vec`.
 - `slice()` = Returns a slice of the `Vec` from a range of indices.
 
 - `sort()` = Sorts the elements of the `Vec`.
 - `reverse()` = Reverses the order of elements in the `Vec`.
 
- <!-- DX:No=underatanding============================================-->
+<!-- Y: REPETER ============================================-->
 
-- `clear()` = Clears all elements from the `Vec`.
-- `len()` = Returns the number of elements in the `Vec`.
-- `retain()` = Retains elements in the `Vec` that match a condition.
 - `iter()` = Returns an iterator over the elements in the `Vec`.
 - `extend()` = Extends the `Vec` with the elements of another iterator or collection.
 - `deref()` = Provides access to the elements of a `Vec` through dereferencing.
 
----
+<!-- R: -->
 
 ## 3. **Option Methods**
 
@@ -74,8 +82,6 @@ These methods are for manipulating and working with vectors (dynamic arrays).
 - `filter()` = Returns an `Option` that is `Some` if the value matches a condition, otherwise `None`.
 - `flatten()` = Converts an `Option<Option<T>>` into `Option<T>`.
 - `map_or()` = Returns the mapped value if `Some`, or a default value if `None`.
-
----
 
 ## 4. **Result Methods**
 
