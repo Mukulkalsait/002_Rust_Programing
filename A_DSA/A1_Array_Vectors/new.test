@@ -1,0 +1,33 @@
+ Array = fixed-size | same type | stack memory | useful when known at compile time
+
+declaration
+  let arr: [i32; 5] "✅5 elements, each of type i32" = [1, 2, 3, 4, 5];
+  let arr = [0; 5]; // [0, 0, 0, 0, 0]
+  let a = [1, 2, 3];              // inferred type
+  let b: [i32; 3] = [4, 5, 6];    // explicit type
+access
+  let x = a[0];   // 1
+  let y = b[2];   // 6
+  println!("{}", a[5]); // PANIC: index out of bounds
+  println!("{:?}", a);     // Debug print whole array.
+
+methods 
+ arr.len()
+ arr.is_empty()
+ arr.iter()
+ arr.contains(&value)
+ arr.copy_from_slice(&other_arr)
+ arr.clone() (if element type supports Clone)
+slice =
+      let a = [1, 2, 3, 4, 5];
+      let slice = &a[1..4]; // [2, 3, 4]
+  split_at(idx)
+  chunks(n) / windows(n)
+  first(), last()
+  get(i) (safe access, returns Option)
+  starts_with(&[T]), ends_with(&[T])
+Vectors:
+.resize(new_len, value)
+.truncate(n) – remove elements after n
+.dedup() – remove consecutive duplicates
+.capacity() – check current capacity
