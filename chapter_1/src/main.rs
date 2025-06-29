@@ -23,8 +23,10 @@ fn main() {
     //R: printing values;
     let x = 4;
     let y = 12;
+    let ghonchu  = 22333232234223423423; 
+    println!("{}",ghonchu);
 
-    println!("X = {x} and y + 2 = {} and z = {}", y + 2, 23);
+    println!("here, X = {x}, Y + 3 = {}, and newly created Z = {}",y+3 , 50);
 
 let anotherSecretNumber:u32 = rand::thread_rng().gen_range(1,1001);
     
