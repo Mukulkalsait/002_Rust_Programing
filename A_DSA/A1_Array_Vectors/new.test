@@ -31,3 +31,4 @@ Vectors:
 .truncate(n) – remove elements after n
 .dedup() – remove consecutive duplicates
 .capacity() – check current capacity
+
