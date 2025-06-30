@@ -74,8 +74,11 @@ fn run_the_game() {
 
         match guess.cmp(&randome_number) {
             Ordering::Less => {
-                let less_number = "Too Small ⏬";
-                println!("{}", less_number.red())
+                let less_number = randome_number - guess;
+                println!(
+                    "Too Small ⏬ \n Your number is {} smaller than actuall number.",
+                    stringify!(less_number).red()
+                )
             }
 
             Ordering::Greater => println!("{}", "Too Big ⏫".red()),
