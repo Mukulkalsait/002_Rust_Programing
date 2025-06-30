@@ -1,7 +1,6 @@
 use colored::*;
 use rand::Rng;
-
-use  std::cmp::Ordering;
+use std::cmp::Ordering;
 // use std::{io, u32}; // prefiusly usign this but u32 was giving HINTS.
 use std::io;
 
