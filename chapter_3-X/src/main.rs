@@ -7,24 +7,28 @@ fn main() {
     create_fetch_conts();
     learn_data_types();
     scaller_float();
+    scaller_boolean();
+    scaller_characters();
 
     println!(
         "---------------------------------------------------\n MAIN() === END\n---------------------------------------------------"
     );
 }
 
-// Y: created CONST outside FN, with CAPITAL leters.
 const TWO: u32 = 1 + 1;
+/* A temp function to show how constant cretaetd adn worked.
+ * Y: created CONST outside FN, with CAPITAL leters. */
 fn create_fetch_conts() {
     println!(
-        "---------------------------------------------------\nX. TestFunction: create_fetch_conts() === >"
+        "---------------------------------------------------\nX. TestFunction: create_fetch_conts() === > \n"
     );
     println!("Accessing Const: {TWO}"); // success
 }
 
+/* explanation of datatypes. */
 fn learn_data_types() {
     println!(
-        "---------------------------------------------------\nA. Function: learn_data_types() === >"
+        "---------------------------------------------------\nA. Function: learn_data_types() === > \n"
     );
     println!(" ===== Data Types 2(S-C)=====");
     println!("-----> A. Scaller DT  BIFC\n-----> A. Compound DT TAF\n");
@@ -46,9 +50,10 @@ fn learn_data_types() {
     scaller_int();
 }
 
+/* explanation of scaller data type INT. */
 fn scaller_int() {
     println!(
-        "---------------------------------------------------\nA.1: Function: scaller_int() === >"
+        "---------------------------------------------------\nA.1: Function: scaller_int() === > \n"
     );
     /* IMP:
      * 1. INT:
@@ -108,9 +113,10 @@ purpose.
      * */
 }
 
+/* explanation of scaller data type Float. */
 fn scaller_float() {
     println!(
-        "---------------------------------------------------\nA.2: Function: scaller_float() === >"
+        "---------------------------------------------------\nA.2: Function: scaller_float() === > \n"
     );
     // IMP:  2. FLOAT:
     let g = 2.0; //  G: float default f64 IMP"f32= float32"
@@ -121,4 +127,53 @@ fn scaller_float() {
         "g:{}\nh:{}\nhigher_flot: right now no supporting hardwear is avialable.",
         g, h
     );
+}
+
+/* explanation of scaller data type BOOLEAN. */
+fn scaller_boolean() {
+    println!(
+        "---------------------------------------------------\nA.3: Function: scaller_boolean() === > \n"
+    );
+    // IMP:  3. Boolean:
+    // Can be unset or Forcefully-set.
+
+    let _i = true; // un-set
+    let _j: bool = false; // B:set we forcerully set a bull here
+    // Y: bool allways takes up 1 BYTE ( 8 bit ) Space.
+    //  and we are INTENTIONALLY not USING i and j so
+    //  i = _i and j = _j. to stop warning.
+}
+
+/* explanation of scaller data type UNICODE CHAR. */
+fn scaller_characters() {
+    println!(
+        "---------------------------------------------------\nA.4: Function: scaller_characters() === > \n"
+    );
+    /* IMP:  4. Characters
+     * ===========================
+     * \        Characters:       \
+     * \--------------------------\
+     * \    unicode characters    \
+     * \ allways in SINGLE COTE ''\
+     * \ ' ' is allways = UNICODE \
+     * \==========================\
+     */
+    println!(
+        "a length of CHAR in RUST is allways = {} Bytes, or 32bit.",
+        std::mem::size_of::<char>()
+    );
+
+    let k = 'z';
+    let l = 'Z'; //captial "Z"
+    let heart_eyed_cat = '😻'; // i dont  know how did this became unicode ? 
+    println!(
+        "Deu to the Unicode Nature of characters. 
+The 4 bytes can contian anything that comes under unincodes.
+including emojis. 
+see k: {}
+l: {}
+heart_eyed_cat: {}
+",
+        k, l, heart_eyed_cat
+    )
 }
