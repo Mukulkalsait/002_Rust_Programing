@@ -13,6 +13,7 @@ fn main() {
 }
 
 const TWO: u32 = 1 + 1;
+
 /* A temp function to show how constant cretaetd adn worked.
  * Y: created CONST outside FN, with CAPITAL leters. */
 fn create_fetch_conts() {
@@ -22,7 +23,7 @@ fn create_fetch_conts() {
     println!("Accessing Const: {TWO}"); // success
 }
 
-/* explanation of 2 Main Data Types. */
+/* P1a: explanation of 2 Main Data Types. */
 fn learn_data_types() {
     println!(
         "---------------------------------------------------\nA. Function: learn_data_types() === > \n"
@@ -80,6 +81,7 @@ fn learn_data_types() {
     compound();
 }
 
+/* FUN_1: Explanation of scaller data type INT. */
 fn scaller() {
     println!(
         "---------------------------------------------------\nA. Function: learn_data_types() === > \n"
@@ -101,7 +103,7 @@ fn scaller() {
     scaller_characters();
 }
 
-/* explanation of scaller data type INT. */
+/* FUN_2: Explanation of scaller data type INT. */
 fn scaller_int() {
     println!(
         "---------------------------------------------------\nA.1: Function: scaller_int() === > \n"
@@ -164,7 +166,7 @@ purpose.
      * */
 }
 
-/* explanation of scaller data type Float. */
+/* FUN_2: Explanation of scaller data type Float. */
 fn scaller_float() {
     println!(
         "---------------------------------------------------\nA.2: Function: scaller_float() === > \n"
@@ -180,7 +182,7 @@ fn scaller_float() {
     );
 }
 
-/* explanation of scaller data type BOOLEAN. */
+/* FUN_2: Explanation of scaller data type BOOLEAN. */
 fn scaller_boolean() {
     println!(
         "---------------------------------------------------\nA.3: Function: scaller_boolean() === > \n"
@@ -195,7 +197,7 @@ fn scaller_boolean() {
     //  i = _i and j = _j. to stop warning.
 }
 
-/* explanation of scaller data type UNICODE CHAR. */
+/* FUN_2: Explanation of scaller data type UNICODE CHAR. */
 fn scaller_characters() {
     println!(
         "---------------------------------------------------\nA.4: Function: scaller_characters() === > \n"
@@ -229,7 +231,7 @@ heart_eyed_cat: {}
     )
 }
 
-/* explanation of COMPOUND data types started. */
+/*  FUN_1: Explanation of COMPOUND data types started. */
 fn compound() {
     println!(
         "---------------------------------------------------\nA-2. Function: compound() === > \n"
@@ -247,28 +249,47 @@ fn compound() {
 
     compound_tupil();
     compound_array();
-    // compound_function();
+    compound_function();
 }
 
+/* FUN_2: Explanation of COMPOUND types TUPIL. */
 fn compound_tupil() {
     println!(
         "---------------------------------------------------\nA-2 .4: Function: Compound_tupil() === > \n"
     );
 
     /* IMP: TUPIL
-     *  1. 1+values = tupil.
-     *  2. automatic type known.
-     *  3. can be difined.
+     *  1. 1 + Values = tupil.
+     *  2. Type can be EXPLICIT or UNSPECIFIED and DIFFERENT.
      */
 
-    let tup1 = ("Lets get Rusty !!!", 1000_000);
-    let tup2 = ("Lets get Rusty !!!", 1000_000, "i am third so am i Triple");
-    let tup3 = (
-        "Lets get Rusty !!!",
-        1000_000,
+    let tup1: (&'static str, i32) = ("lets get RUSTY", 100_000); // Y: we can add "_" between Numbers.
+    let tup2: (&'static str, i32, &'static str) = ("string1", 1234, "i am 3rd so am i Truple?");
+    let tup3: (&'static str, i32, String, bool) = (
+        "string2",
+        11223344,
+        String::from("i am fucking ProperString Here"),
         true,
-        "so am  i a quadrapil now ?",
-    );
+    ); // G:
+    // String::from("string") = workes.
+
+    geting_valuse_from_tupils(tup1, tup2, tup3);
+}
+
+/* FUN_3: Tupils extension. = 1 */
+fn geting_valuse_from_tupils(
+    tup1: (&'static str, i32),
+    tup2: (&'static str, i32, &'static str),
+    tup3: (&'static str, i32, String, bool),
+) {
+    // B: 1: De-stracturing
+    let (chanel_name, subcriber_count) = tup1;
+    let (a, b, c) = tup2; // this totally worked. + automatic assign.
+
+    // B: 2: Dot-Notatioon
+    let subcount1 = tup3.0;
+    let subcount2 = tup3.1;
+    let subcount3 = tup3.2;
 
     /*B: geting values from -> TUPIL
      *   --------------------------------
@@ -281,13 +302,73 @@ fn compound_tupil() {
      *    we will only take the value we
      *    needed and use it.
      * */
-
-    let (chanel_name, subcriber_count) = tup1; // B: 1: De-stracturing
-    let (a, b, c) = tup2; // this totally worked. + automatic assign.
-
-    let subcount1 = tup3.0; // B: 2: Dot-Notatioon
-    let subcount2 = tup3.1;
-    let subcount3 = tup3.2;
 }
 
-fn compound_array() {}
+/* FUN_2: Explanation of COMPOUND types ARRAY. */
+fn compound_array() {
+    /* IMP: Array:
+     *===============================
+     *  1. fixed Length (otherWise use VECTOR)
+     *  let arrName = [ a , 'b', 23 , javan]  ==> array.
+     *  let arrayNm = [0;8] in this line we are making array of "8"
+     *  value whereas all 8 numbers are  "0";
+     * */
+
+    let error_code_array = [200, 404, 500];
+    let nof_found = error_code_array[1]; // = 404
+    let array_of_8_zeros = [0, 8];
+}
+
+/* FUN_2: Explanation of COMPOUND types FUNCTIONS. */
+fn compound_function() {
+    function_creation_rules_n_info();
+}
+
+/* FUN_3: Explanation of function types. = 1 */
+fn function_creation_rules_n_info() {
+    /* B: FN
+     *   1. Can have arguments -> multyple just like normal funciotns in any languages
+     *   2. Same num of arguments must be passed while calling.
+     */
+    /* G: any code in RUST is --> STATEMENT or EXPRESSTION.
+     *   a. statement => perform some action but do not return a value.
+     *   b. expression => perform some action + return a value.
+     *   EG.
+     *
+     */
+
+    println!("a statement. "); // Y: is a statement
+    let sum = returning_function_one(23, 34); // Y: EXPRESSTION
+    let multiply = returning_function_two(23, 34); // Y: EXPRESSTION
+    //
+    println!(
+        "
+The Sum of returning_function_one(x:i32,y:i23)->i32 is = {}
+The multiply of returning_function_two(x:i32,y:i23)->i32 is = {}
+",
+        sum, multiply
+    ); // Y: is a statement
+}
+
+/* FUN_3: Explanation of function types. = 2 */
+fn returning_function_one(x: i32, y: i32) -> i32 {
+    /* IMP: the proper Way is
+     * ||----------------------------||
+     * || fn function_name() -> i32{ ||
+     * || return sum                 ||
+     * || }                          ||
+     * ||----------------------------||
+     *
+     * Y:
+     * 1. The function will give ERROR if [ -> i32 ] return type is not specified.
+     * 2. No need of ';' semicolon or "return" in last sentence. ( but you can still use them.)
+     */
+
+    let sum = x * y;
+    sum
+}
+
+/* FUN_3: Explanation of function types. = 3 */
+fn returning_function_two(x: i32, y: i32) -> i32 {
+    x * y
+}
