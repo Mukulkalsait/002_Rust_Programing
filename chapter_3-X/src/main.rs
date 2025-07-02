@@ -6,9 +6,6 @@ fn main() {
 
     create_fetch_conts();
     learn_data_types();
-    scaller_float();
-    scaller_boolean();
-    scaller_characters();
 
     println!(
         "---------------------------------------------------\n MAIN() === END\n---------------------------------------------------"
@@ -25,20 +22,18 @@ fn create_fetch_conts() {
     println!("Accessing Const: {TWO}"); // success
 }
 
-/* explanation of datatypes. */
+/* explanation of 2 Main Data Types. */
 fn learn_data_types() {
     println!(
         "---------------------------------------------------\nA. Function: learn_data_types() === > \n"
     );
-    println!(" ===== Data Types 2(S-C)=====");
-    println!("-----> A. Scaller DT  BIFC\n-----> A. Compound DT TAF\n");
 
     /* Y: 2 main data types:
      * A. Scaller Datatypes.
      * B. Compound Datatypes.
      *
      *
-     * DX:======== A Scaller ============================================================================================
+     * DX:======== A Scaller ========
      *
      * G: Scaller Types.
      *  ---------------
@@ -46,8 +41,64 @@ fn learn_data_types() {
      *  Floatpoint number
      *  Boolean
      *  Charecter
+     *
+     * DX:======== B COMPOUND ========
+     *
+     * G: B. Compound DT -> TAF
+     *  ->
+     *  type that represent a group of values  is "Compound data type".
+     *   ----------------------------------------
+     *    A. tup ( tupil)
+     *    B. array
+     *    C. fu
+     **/
+
+    println!(
+        " 
+            ===== Data Types 2(S-C)=====
+     _________________________________________
+    | 2 Main: Scaller and Compound Datatypes. |
+    |_________________________________________|
+
+    ======== A Scaller ========
+     Types.
+     ---------------
+     Intiger
+     Floatpoint number
+     Boolean
+     Charecter
+
+    ======== B COMPOUND ========
+     Type that represent a group of values  is \"Compound data type\".
+     ---------------
+     A. tup ( tupil)
+     B. array
+     C. fu "
+    );
+
+    scaller();
+    compound();
+}
+
+fn scaller() {
+    println!(
+        "---------------------------------------------------\nA. Function: learn_data_types() === > \n"
+    );
+    println!(" ===== SCALLER (IFBC) =====");
+
+    /* DX:======== A Scaller ========
+     *
+     * G: Scaller Types. IFBC
+     *  ---------------
+     *  Intiger
+     *  Floatpoint number
+     *  Boolean
+     *  Charecter
      */
     scaller_int();
+    scaller_float();
+    scaller_boolean();
+    scaller_characters();
 }
 
 /* explanation of scaller data type INT. */
@@ -177,3 +228,66 @@ heart_eyed_cat: {}
         k, l, heart_eyed_cat
     )
 }
+
+/* explanation of COMPOUND data types started. */
+fn compound() {
+    println!(
+        "---------------------------------------------------\nA-2. Function: compound() === > \n"
+    );
+    println!(" ===== COMPOUND (TAF)=====");
+
+    /* Y: ======== A Compound ========
+     *  ->
+     *  type that represent a group of values  is "Compound data type".
+     *   ----------------------------------------
+     *    A. tup ( tupil)
+     *    B. array
+     *    C. fu
+     **/
+
+    compound_tupil();
+    compound_array();
+    // compound_function();
+}
+
+fn compound_tupil() {
+    println!(
+        "---------------------------------------------------\nA-2 .4: Function: Compound_tupil() === > \n"
+    );
+
+    /* IMP: TUPIL
+     *  1. 1+values = tupil.
+     *  2. automatic type known.
+     *  3. can be difined.
+     */
+
+    let tup1 = ("Lets get Rusty !!!", 1000_000);
+    let tup2 = ("Lets get Rusty !!!", 1000_000, "i am third so am i Triple");
+    let tup3 = (
+        "Lets get Rusty !!!",
+        1000_000,
+        true,
+        "so am  i a quadrapil now ?",
+    );
+
+    /*B: geting values from -> TUPIL
+     *   --------------------------------
+     *  1: tupil De-stracturing
+     *    we are going to take all the valuse
+     *    in a single go with variable for every
+     *    value in tupil
+     *  ---------------------------------
+     *  2: tupil Dot-Notatioon.
+     *    we will only take the value we
+     *    needed and use it.
+     * */
+
+    let (chanel_name, subcriber_count) = tup1; // B: 1: De-stracturing
+    let (a, b, c) = tup2; // this totally worked. + automatic assign.
+
+    let subcount1 = tup3.0; // B: 2: Dot-Notatioon
+    let subcount2 = tup3.1;
+    let subcount3 = tup3.2;
+}
+
+fn compound_array() {}
