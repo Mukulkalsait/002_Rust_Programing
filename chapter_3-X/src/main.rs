@@ -6,6 +6,7 @@ fn main() {
 
     create_fetch_conts();
     learn_data_types();
+    scaller_float();
 
     println!(
         "---------------------------------------------------\n MAIN() === END\n---------------------------------------------------"
@@ -76,7 +77,12 @@ fn scaller_int() {
     let f: u8 = 255; // G: intiger oferflow 👇
 
     println!(
-        "a:{}\nb:{}\nc:{}\n=>(The valuse of d and e are not printed cos we used _d and _e to tell compailer that we are not using it and we are doing it on purpose.) \nf:{}",
+        "a:{}\nb:{}\nc:{}\n=>(
+        The valuse of d and e are not
+printed cos we used _d and _e to tell compailer
+that we are not using it and we are doing it on
+purpose.
+) \nf:{}",
         a, b, c, f
     );
 
@@ -100,4 +106,19 @@ fn scaller_int() {
      *  \       256=length here.                                 \
      *  \--------------------------------------------------------\
      * */
+}
+
+fn scaller_float() {
+    println!(
+        "---------------------------------------------------\nA.2: Function: scaller_float() === >"
+    );
+    // IMP:  2. FLOAT:
+    let g = 2.0; //  G: float default f64 IMP"f32= float32"
+    let h: f32 = 3.0; //  forcefully assgined f32
+    // let higher_flot: f128 = 32934945.22349234; // Y:so higher float is avialable but we havent run it.
+
+    println!(
+        "g:{}\nh:{}\nhigher_flot: right now no supporting hardwear is avialable.",
+        g, h
+    );
 }
