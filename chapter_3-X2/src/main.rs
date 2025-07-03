@@ -1,10 +1,15 @@
 fn main() {
-    println!("Hello, world!");
+    println!(
+        "---------------------------------------------------\n MAIN() :Start\n---------------------------------------------------"
+    );
 
     if_else_understanding();
 }
 
 fn if_else_understanding() {
+    println!(
+        "---------------------------------------------------\n A. Fu if_else_understanding() => | if-elseif-else |  \n"
+    );
     /* comment
      *  Y:: if-elseif-else
      *  1. Conduction must be EXPLICETYL "BULLEAN".
