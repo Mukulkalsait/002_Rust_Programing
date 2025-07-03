@@ -326,7 +326,9 @@ fn compound_array() {
      *  value whereas all 8 numbers are  "0";
      * */
 
+    // Y: Creation Array
     let error_code_array = [200, 404, 500];
+
     let nof_found = error_code_array[1]; // = 404
     let array_of_8_zeros = [0, 8];
 }
