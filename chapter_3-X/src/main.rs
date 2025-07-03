@@ -318,6 +318,9 @@ fn geting_valuse_from_tupils(
 
 /* FUN_2: Explanation of COMPOUND types ARRAY. */
 fn compound_array() {
+    println!(
+        "---------------------------------------------------\nA-3 Function: Compound_Array() === > \n"
+    );
     /* IMP: Array:
      *===============================
      *  1. fixed Length (otherWise use VECTOR)
@@ -326,15 +329,22 @@ fn compound_array() {
      *  value whereas all 8 numbers are  "0";
      * */
 
-    // Y: Creation Array
+    // Y: Creation Array:
     let error_code_array = [200, 404, 500];
+    let array_two = [3; 5]; // Y: generated array of [3,3,3,3,3]
 
-    let nof_found = error_code_array[1]; // = 404
-    let array_of_8_zeros = [0, 8];
+    // Y: Accessiong Array:
+    println!(
+        "error_code_array.indexValus.1 = {}\narray_two.index.3 = {}",
+        error_code_array[1], array_two[3]
+    );
 }
 
 /* FUN_2: Explanation of COMPOUND types FUNCTIONS. */
 fn compound_function() {
+    println!(
+        "---------------------------------------------------\n A-3 Function: Compound_Function() === > \n"
+    );
     function_creation_rules_n_info();
 }
 
