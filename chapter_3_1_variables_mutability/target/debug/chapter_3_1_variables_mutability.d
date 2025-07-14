@@ -1,1 +1,0 @@
-/home/mdkarch/1_Projects/2_rust-Programming/chapter_3_1_variables_mutability/target/debug/chapter_3_1_variables_mutability: /home/mdkarch/1_Projects/2_rust-Programming/chapter_3_1_variables_mutability/src/main.rs

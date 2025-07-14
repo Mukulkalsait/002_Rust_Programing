@@ -1,1 +1,0 @@
-/home/mukuldk/1Home/1Projects/class/2_rust-Programming/chapter_3_2_data_types_scaller/target/debug/chapter_3_2_DataTypes: /home/mukuldk/1Home/1Projects/class/2_rust-Programming/chapter_3_2_data_types_scaller/src/main.rs

@@ -93,8 +93,7 @@ fn accessgin_array(all_arrays: [[&'static str; 3]; 3]) {
      * --------------------------------
      *  1. Access By Index Value.
      *   2. .get() [safe access + Error Handling].
-     *
-     * */
+     */
 
     indexing_array(all_arrays);
     indexing_array_with_if_else(all_arrays);
@@ -115,6 +114,8 @@ IndexingDynamicArrya :
 ",
         all_arrays[0][0], all_arrays[0][1], all_arrays[1][0], all_arrays[1][1]
     );
+    // here we are printing {computer name } -> { computer processor}
+    // which are {array value 0} -> { array value 1}
 }
 
 /* P1a: */
@@ -122,6 +123,16 @@ fn indexing_array_with_if_else(all_arrays: [[&'static str; 3]; 3]) {
     if let Some(mno_array) = all_arrays.get(1) {
         if let Some(pqr_array) = mno_array.get(0) {
             println!("Value is : {}", pqr_array);
+        }
+    }
+    if let Some(abce_array) = all_arrays.get(2) {
+        if let Some(efgh_array) = abce_array.get(2) {
+            println!("the value of this array is : {}", efgh_array);
+        }
+    }
+    if let Some(randome_array) = all_arrays.get(0) {
+        for n in randome_array {
+            println!("n - {:?}", n)
         }
     }
 }
