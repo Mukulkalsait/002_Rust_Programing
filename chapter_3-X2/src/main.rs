@@ -85,7 +85,7 @@ fn creation_of_arrays() -> [[&'static str; 3]; 3] {
     [array_one, array_two, array_auto]
 }
 
-/* FUN_3:*/
+/* FUN_2:*/
 fn accessgin_array(all_arrays: [[&'static str; 3]; 3]) {
     println!("-------\n B. Fu accessgin_array() => | access array and do something. |  \n");
 
