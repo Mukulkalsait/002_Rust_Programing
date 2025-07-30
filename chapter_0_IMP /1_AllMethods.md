@@ -43,7 +43,6 @@ These methods are for manipulating and working with vectors (dynamic arrays).
 - `is_empty()` = Checks if the `Vec` is empty.
 - `len()` = Returns the number of elements in the `Vec`.
 - `contains()` = Checks if an element exists in the `Vec`.
-<!-- find -->
 - `retain()` = Retains elements in the `Vec` that match a condition.
 
 <!-- Y: PROCESSORS =============================================-->
