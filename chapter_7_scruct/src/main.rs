@@ -1,10 +1,6 @@
 #![allow(dead_code)] // at the top.
 
-#[derive(Debug)] // Without this {:?} will not work in struct.
-struct Person {
-    name: String,
-    age: u8,
-}
+// B: Structs Creations. ===============================================
 
 struct Unit; // A unit struct
 struct Pair(i32, f32); // A tuple struct
@@ -21,16 +17,37 @@ struct Rectangle {
     bottom_right: Point,
 }
 
+#[derive(Debug)] // Without this {:?} will not work in struct.
+struct Person {
+    name: String,
+    age: u8,
+}
+
+#[derive(Debug)] // Without this {:?} will not work in struct.
+struct PersonCreated1 {
+    name: String,
+    age: u16,
+    info: Person,
+}
+
 // R: =================================================================
 
 fn struct_learning() {
-    // Create struct with field init shorthand
-    let name = String::from("Peter");
-    let age = 27;
-    let peter = Person { name, age };
+    //-----------------------------------------------
+
+    let peter = PersonCreated1 {
+        name: String::from("Peter"),
+        age: 27,
+        info: Person {
+            surname: String::from("Parker"),
+            address: 27,
+        },
+    };
 
     // Print debug struct
-    println!("{:?}", peter);
+    println!("{:?}", peter); // Working
+
+    //-----------------------------------------------
 
     // Instantiate a `Point`
     let point: Point = Point { x: 5.2, y: 0.4 };
