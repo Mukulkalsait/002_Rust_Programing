@@ -1,38 +1,27 @@
 #![allow(dead_code)] // at the top.
 
-// B: Structs Creations. ===============================================
-
-struct Unit; // A unit struct
-struct Pair(i32, f32); // A tuple struct
-struct Point {
-    x: f32,
-    y: f32,
-}
-
-// Y:  Structs in Structs : Coordinates of Rectangle using 'Point 👆🏽'
-struct Rectangle {
-    top_left: Point,
-    top_right: Point,
-    bottom_left: Point,
-    bottom_right: Point,
-}
-
-#[derive(Debug)] // Without this {:?} will not work in struct.
-struct Person {
-    name: String,
-    age: u8,
-}
-
-#[derive(Debug)] // Without this {:?} will not work in struct.
-struct PersonCreated1 {
-    name: String,
-    age: u16,
-    info: Person,
-}
-
-// R: =================================================================
-
 fn struct_learning() {
+    structs_basics_1();
+    structs_basics_2();
+}
+
+fn structs_basics_1() {
+    // Y: structs_basics_1: prepratoins-------------
+
+    #[derive(Debug)] // Without this {:?} will not work in struct.
+    struct Person {
+        surname: String,
+        house_no: u8,
+    }
+
+    // Y:  Structs in Structs
+    #[derive(Debug)] // Without this {:?} will not work in struct.
+    struct PersonCreated1 {
+        name: String,
+        age: u16,
+        info: Person,
+    }
+
     //-----------------------------------------------
 
     let peter = PersonCreated1 {
@@ -40,18 +29,37 @@ fn struct_learning() {
         age: 27,
         info: Person {
             surname: String::from("Parker"),
-            address: 27,
+            house_no: 104,
         },
     };
 
     // Print debug struct
     println!("{:?}", peter); // Working
+}
+
+fn structs_basics_2() {
+    // Y: structs_basics_2: prepratoins-------------
+
+    struct Unit; // A unit struct
+    struct Pair(i32, f32); // A tuple struct
+    struct Point {
+        x: f32,
+        y: f32,
+    }
+
+    // Y:  Structs in Structs : Coordinates of Rectangle using 'Point 👆🏽'
+    struct Rectangle {
+        top_left: Point,
+        top_right: Point,
+        bottom_left: Point,
+        bottom_right: Point,
+    }
 
     //-----------------------------------------------
 
     // Instantiate a `Point`
-    let point: Point = Point { x: 5.2, y: 0.4 };
-    let another_point: Point = Point { x: 10.3, y: 0.2 };
+    let point: Point = Point { x: 5.2, y: 0.4 }; // decleared : Point
+    let another_point = Point { x: 10.3, y: 0.2 }; // auto detected : Point
 
     // Access the fields of the point
     println!("point coordinates: ({}, {})", point.x, point.y);
