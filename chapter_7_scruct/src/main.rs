@@ -50,8 +50,8 @@ fn structs_basics_2() {
     // Y:  Structs in Structs : Coordinates of Rectangle using 'Point 👆🏽'
     struct Rectangle {
         top_left: Point,
-        top_right: Point,
-        bottom_left: Point,
+        // top_right: Point,
+        // bottom_left: Point,
         bottom_right: Point,
     }
 
@@ -64,8 +64,7 @@ fn structs_basics_2() {
     // Access the fields of the point
     println!("point coordinates: ({}, {})", point.x, point.y);
 
-    // Make a new point by using struct update syntax to use the fields of our
-    // other one
+    // Make a new point by using struct update syntax to use the fields of our other one
     let bottom_right = Point {
         x: 10.3,
         ..another_point
