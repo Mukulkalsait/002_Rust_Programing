@@ -1,0 +1,71 @@
+fn findMinMaxSums(n: usize, arr: Vec<i32>, k: usize) {
+    let mut sorted_arr = arr.clone();
+    sorted_arr.sort();
+    let min_sum: i32 = sorted_arr[..n - k].iter().sum();
+    println!("{min_sum}");
+}
+
+fn main() {
+    // Read input values from stdin
+    let n: usize = read_line().trim().parse().expect("Expected an integer");
+    let arr: Vec<i32> = read_line()
+        .trim()
+        .split_whitespace()
+        .map(|s| s.parse().expect("Expected an integer"))
+        .collect();
+    let k: usize = read_line().trim().parse().expect("Expected an integer");
+
+    // Call find_min_max_sums and display the result
+    // let result = findMinMaxSums(n, arr, k);
+    // println!(
+    //     "{}",
+    //     result
+    //         .iter()
+    //         .map(ToString::to_string)
+    //         .collect::<Vec<String>>()
+    //         .join(" ")
+    // );
+}
+
+fn read_line() -> String {
+    let mut input = String::new();
+    std::io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
+    input
+}
+
+/*
+* fn remove_k(arr:Vec<i32>)-> (Vec<i32>, Vec<i32>){
+* 	let mut i = arr[0];
+* 	for &j in arr{
+* 		let mut maxno = &i;
+* 		let mut minno = &j;
+* 		if i > j {
+* 			maxno = &j;
+* 		}else{
+* 			minno = &j;
+* 		}
+* 	}
+* 	for i in arr{
+* 		let  mut remaning_max = [];
+* 		if i == maxno{continue; }
+* 		remaning_max.push(i);
+*  	}
+*  	for i in arr{
+* 		let  mut remaning_min = [];
+* 		if i == minno{continue; }
+* 		remaning_min.push(i);
+*  	}
+* 	let tup remanings = remaning_max,remaning_min;
+* 	remanings
+* }
+* let mut newMax = ![];
+* 	let mut newMin = ![];
+*  for i in 0..=k{
+* 	let tup a = remove_k();
+* 	newMax = a.0;
+* 	newMin =  a.1;
+* 	}
+*}
+*/
