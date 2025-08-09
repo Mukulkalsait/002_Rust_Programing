@@ -74,7 +74,13 @@ fn structs_basics_2() {
     // from `another_point`
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
 
-    // Destructure the point using a `let` binding
+    // IMP: Destructure the point using a `let` binding
+    // here we dectruction struct with
+    //   Point { x:<name-a>, y:<name-b> } = point(name of var struct)
+    //   so this will take vallues of
+    //      point.x => name-a
+    //      point.y => name-b
+
     let Point {
         x: left_edge,
         y: top_edge,
