@@ -21,6 +21,29 @@ fn create_order_template() -> Order {
     }
 }
 
+// Y: Created implementation for Order::new
+impl Order {
+    pub fn new(
+        name: String,
+        year: u32,
+        made_by_phone: bool,
+        made_by_mobile: bool,
+        made_by_email: bool,
+        item_number: u32,
+        count: u32,
+    ) -> Self {
+        Order {
+            name,
+            year,
+            made_by_phone,
+            made_by_mobile,
+            made_by_email,
+            item_number,
+            count,
+        }
+    }
+}
+
 fn main() {
     // You can optionally experiment here.
 }
@@ -34,7 +57,25 @@ mod tests {
         let order_template = create_order_template();
 
         // TODO: Create your own order using the update syntax and template above!
-        // let your_order =
+        // let your_order = "Hacker in Rust", 2019, false, false, true, 123, 1
+
+        /* Y: expected answer : added _ to remove warning. */
+        let _your_order = Order {
+            name: String::from("Hacker in Rust"),
+            count: 1,
+            ..create_order_template()
+        };
+
+        /* Y: Addvanced way to solve. */
+        let your_order = Order::new(
+            String::from("Hacker in Rust"),
+            2019,
+            false,
+            false,
+            true,
+            123,
+            1,
+        );
 
         assert_eq!(your_order.name, "Hacker in Rust");
         assert_eq!(your_order.year, order_template.year);
