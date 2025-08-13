@@ -1,1 +1,0 @@
-// Ticket struct, seat, price
