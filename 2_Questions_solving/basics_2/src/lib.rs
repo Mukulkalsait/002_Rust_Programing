@@ -1,4 +1,4 @@
-/* Y:
+/* TAG:
  * ---------------------------------------
  * | A CENTERAL-HUB fro all the modules. |
  * ---------------------------------------
@@ -7,4 +7,4 @@
  *    2. must contain mod.rs with list of modules
  */
 
-pub mod functions;
+pub mod program_one;

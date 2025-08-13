@@ -27,16 +27,6 @@ fn run_eligibliligy_tests() {
     }
 }
 
-fn event_ticket_booking_system() {
-    let event = Event::new(
-        "Music Consert".to_string(),
-        "2025-08-06".to_string(),
-        150,
-        499.99,
-    );
-    println!("Avialable Seats are : {}", event.avialable_seats());
-}
-
 /* TAG: EXTRAS*/
 fn _run_other_dependency_functions() {
     difference_between_same_name_types();
@@ -45,7 +35,6 @@ fn _run_other_dependency_functions() {
 fn main() {
     run_even_odd_test();
     run_eligibliligy_tests();
-    event_ticket_booking_system();
 
     // run_other_dependency_functions();
 }
