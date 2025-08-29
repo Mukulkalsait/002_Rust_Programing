@@ -1,2 +1,0 @@
-check.command = "clippy"
-check.extraArgs = ["--profile", "test"]
