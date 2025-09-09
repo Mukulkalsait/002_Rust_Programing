@@ -362,8 +362,8 @@ fn function_creation_rules_n_info() {
      */
 
     println!("a statement. "); // Y: is a statement
-    let sum = returning_function_one(23, 34); // Y: EXPRESSTION
-    let multiply = returning_function_two(23, 34); // Y: EXPRESSTION
+    let sum = returning_function_one(2,268, 34); // Y: EXPRESSTION
+    let multiply = returning_function_two(2,268, 3); // Y: EXPRESSTION
     //
     println!(
         "
