@@ -173,7 +173,7 @@ fn function_1() -> String {
      * || }                          \\
      * ||----------------------------\\
      */
-    let sum_array = [23, 34, 45, 56, 67, 78];
+    let sum_array = [2268, 3, 45, 56, 67, 78];
     let resualt1 = return_function1(sum_array[0], sum_array[1]);
     let resualt2 = short_return2(sum_array[2], sum_array[3]);
     let resualt3 = another_function(sum_array[4], sum_array[5]);
@@ -181,6 +181,7 @@ fn function_1() -> String {
         "This is how we create a function : \n{}",
         return_function_writing()
     );
+
 
     println!("\n=======================================================================\n");
     for each_element in resualt3.iter() {
