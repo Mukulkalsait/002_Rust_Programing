@@ -4,6 +4,20 @@ use std::cmp::Ordering;
 // use std::{io, u32}; // prefiusly usign this but u32 was giving HINTS.
 use std::io;
 
+fn smaller(i: u32, mut cn) {
+    println!("{} is {}", i, "Too Small 🔽".red());
+    if  i - cn < cn || cn == 3333  {
+        cn = i;
+    } 
+
+}
+fn greater(i: u32, mut cn) {
+    println!("{} is {}", i, "Too Large 🔼".red());
+    if  i - cn < cn || cn == 3333  {
+        cn = i;
+    } 
+}
+
 fn main() {
     println!(
         "|--------------------------------- Guessing Game !---------------------------------|"
@@ -15,6 +29,7 @@ fn main() {
     loop {
         println!("😎 Please input your Guess in the range of 1 to 1000:");
         let mut guess = String::new();
+        let mut cn: u32 = 3333; // closest numb
         io::stdin()
             //Y: the lines billow are for reading of value and then returing resualt which is enum!!!
             .read_line(&mut guess)
@@ -45,8 +60,8 @@ fn main() {
         };
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("{}", "Too Small 🔽".red()),
-            Ordering::Greater => println!("{}", "Too Big 🔼".red()),
+            Ordering::Less => smaller(guess, cn),
+            Ordering::Greater => greater(guess, cn),
             Ordering::Equal => {
                 println!("{}", "You Won !!! 💛💙🩶🩷🤍💖💛💙🩶🩷🤍💖".green());
                 additional_functionality_additioon();
