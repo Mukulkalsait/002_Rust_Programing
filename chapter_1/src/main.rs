@@ -1,4 +1,5 @@
 use colored::*;
+
 use rand::Rng;
 use std::cmp::Ordering;
 use std::{io, u32}; // Y: Previously used only u32 but got suggestoins.
