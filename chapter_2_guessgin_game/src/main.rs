@@ -4,19 +4,19 @@ use std::cmp::Ordering;
 // use std::{io, u32}; // prefiusly usign this but u32 was giving HINTS.
 use std::io;
 
-fn smaller(i: u32, mut cn) {
-    println!("{} is {}", i, "Too Small 🔽".red());
-    if  i - cn < cn || cn == 3333  {
-        cn = i;
-    } 
-
-}
-fn greater(i: u32, mut cn) {
-    println!("{} is {}", i, "Too Large 🔼".red());
-    if  i - cn < cn || cn == 3333  {
-        cn = i;
-    } 
-}
+// fn smaller(i: u32, mut cn) -> u32{
+//     println!("{} is {}", i, "Too Small 🔽".red());
+//     if  i - cn < cn || cn == 3333  {
+//         cn = i;
+//     }
+//
+// }
+// fn greater(i: u32, mut cn) -> u32 {
+//     println!("{} is {}", i, "Too Large 🔼".red());
+//     if  i - cn < cn || cn == 3333  {
+//         cn = i;
+//     }
+// }
 
 fn main() {
     println!(
@@ -24,7 +24,7 @@ fn main() {
     );
     let secret_number = rand::thread_rng().gen_range(1, 1001);
 
-    // println!("The secret number is : {}", secret_number);
+    println!("The secret number is : {}", secret_number); // DX: turn off when done.
 
     loop {
         println!("😎 Please input your Guess in the range of 1 to 1000:");
