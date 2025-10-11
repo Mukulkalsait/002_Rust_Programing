@@ -79,5 +79,6 @@ fn additional_functionality_additioon() {
 3. each time the guess is compaired with the exciting one guess if the guess is closer the newer will replace the older one.
 4. and with the output we will be showing the result to choose in the newer 'shringked' range  with the help of a and b.
 5. with this method we can increase the guess range drastically and add levels like easy, modaret, hard, and assested game or unassisted.
+6. add what every you want to add just do it fast.
 ")
 }
