@@ -16,4 +16,5 @@ pub fn remove_item_from_hash_map(map: &mut HashMap<String, i32>) {
     // .or_insert() -> if not found add.
     map.entry(String::from("Mukul")).or_insert(99);
     map.entry(String::from("Shruti")).or_insert(75);
+    map.entry(String::from("noOne")).or_insert(12);
 }
