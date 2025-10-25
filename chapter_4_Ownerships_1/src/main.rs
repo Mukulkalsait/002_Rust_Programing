@@ -252,7 +252,7 @@ fn golden_rules() {
 ===============================================================================================
 "
     );
-    /* Y:  NOW 3 (ABC) GOLDEN RULES: Tattow them.
+    /* G:  NOW 3 (ABC) GOLDEN RULES: Tattow them.
      * --------------------------------------
      *   A-1. Each value ==> must have OWNER.
      *   B-2. 1 VAR = 1 OWNER( NO MORE NO LESS)
