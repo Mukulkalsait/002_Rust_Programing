@@ -15,7 +15,7 @@ fn main() {
 const TWO: u32 = 1 + 1;
 
 /* A temp function to show how constant cretaetd adn worked.
- * Y: created CONST outside FN, with CAPITAL leters. */
+ * Y: created CONST outside FN 🡑, with CAPITAL leters. */
 fn create_fetch_conts() {
     println!(
         "---------------------------------------------------\nX. TestFunction: create_fetch_conts() === > \n"
@@ -117,9 +117,9 @@ fn scaller_int() {
      * \\-------------------------------------------------\
      * \\  8-bit   \   i8     \   u8    \\    ---         \
      * \\  16-bit  \   i16    \   u16   \\    ---         \
-     * \\  32-bit  \   i32    \   u32   \\    i32         \
-     * \\  64-bit  \   i64    \   u64   \\    i64         \
-     * \\  128-bit \   i128   \   u128  \\    i128        \
+     * \\  32-bit  \   i32    \   u32   \\    f32         \
+     * \\  64-bit  \   i64    \   u64   \\    f64         \
+     * \\  128-bit \   i128   \   u128  \\    f128        \
      * \\----------\--------------------\\----------------\
      * \\   ARCH   \           architecture depend        \
      * ===================================================
@@ -330,7 +330,7 @@ fn compound_array() {
      * */
 
     // Y: Creation Array:
-    let error_code_array = [200, 404, 500];
+    let error_code_array: [i32; 3] = [200, 404, 500];
     let array_two = [3; 5]; // Y: generated array of [3,3,3,3,3]
 
     // Y: Accessiong Array:
@@ -362,8 +362,8 @@ fn function_creation_rules_n_info() {
      */
 
     println!("a statement. "); // Y: is a statement
-    let sum = returning_function_one(2,268, 34); // Y: EXPRESSTION
-    let multiply = returning_function_two(2,268, 3); // Y: EXPRESSTION
+    let sum = returning_function_one(2, 268, 34); // Y: EXPRESSTION
+    let multiply = returning_function_two(2, 268, 3); // Y: EXPRESSTION
     //
     println!(
         "
