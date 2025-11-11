@@ -16,9 +16,9 @@ fn tupil_creation() {
            --------------------------------------------
            | 'COMPOUND' represents a group of values. |
            --------------------------------------------
-             A. tup (tupil)
-             B. array
-             C. fu
+           | A. tup (tupil)                           |
+           | B. array                                 |
+           | C. fu                                    |
            |------------------------------------------|
         "
     );
@@ -181,7 +181,6 @@ fn function_1() -> String {
         "This is how we create a function : \n{}",
         return_function_writing()
     );
-
 
     println!("\n=======================================================================\n");
     for each_element in resualt3.iter() {
