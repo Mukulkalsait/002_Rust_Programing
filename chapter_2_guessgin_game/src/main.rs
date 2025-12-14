@@ -4,20 +4,6 @@ use std::cmp::Ordering;
 // use std::{io, u32}; // prefiusly usign this but u32 was giving HINTS.
 use std::io;
 
-// fn smaller(i: u32, mut cn) -> u32{
-//     println!("{} is {}", i, "Too Small 🔽".red());
-//     if  i - cn < cn || cn == 3333  {
-//         cn = i;
-//     }
-//
-// }
-// fn greater(i: u32, mut cn) -> u32 {
-//     println!("{} is {}", i, "Too Large 🔼".red());
-//     if  i - cn < cn || cn == 3333  {
-//         cn = i;
-//     }
-// }
-
 fn main() {
     println!(
         "|--------------------------------- Guessing Game !---------------------------------|"
