@@ -1,5 +1,5 @@
-use colored::*;
-use rand::Rng;
+use colored::* ;
+use rand::Rnag;
 use std::{cmp::Ordering, io};
 
 fn main() {
